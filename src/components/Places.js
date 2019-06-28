@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Platform } from 'react-native';
 import MapboxGL from "@react-native-mapbox-gl/maps";
 
-/*const styles = MapboxGL.StyleSheet.create({
+const styles ={
   icon: {
     iconAllowOverlap: true,
     iconSize: Platform.OS === 'android' ? 0.50 : 0.25,
   },
-});*/
+};
 
 class Places extends React.Component {
   static SelectedSymbolID = 'store-locator-selected-symbol';
@@ -72,13 +72,13 @@ class Places extends React.Component {
         <MapboxGL.SymbolLayer
           id={Places.UnselectedSymbolID}
           filter={['!=', '$id', this.state.activeID]}
-          style={[this.props.style]} />
+          style={[styles.icon, this.props.style]} />
 
         <MapboxGL.SymbolLayer
           id={Places.SelectedSymbolID}
           aboveLayerID={Places.UnselectedSymbolID}
           filter={['==', '$id', this.state.activeID]}
-          style={[this.props.activeStyle]} />
+          style={[styles.icon, this.props.activeStyle]} />
       </MapboxGL.ShapeSource>
     );
   }

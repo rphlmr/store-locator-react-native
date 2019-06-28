@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MapboxGL from "@react-native-mapbox-gl/maps";
 
-/*const styles = MapboxGL.StyleSheet.create({
+const styles = {
   innerCircle: {
     circleRadius: 8,
   },
@@ -10,7 +10,7 @@ import MapboxGL from "@react-native-mapbox-gl/maps";
     circleRadius: 13,
     circleOpacity: 0.40,
   },
-});*/
+};
 
 class CurrentLocation extends React.Component {
   static propTypes = {
@@ -94,12 +94,12 @@ class CurrentLocation extends React.Component {
       <MapboxGL.ShapeSource id='store-locator-current-location-source' shape={this.state.currentPosition}>
         <MapboxGL.CircleLayer
           id='store-locator-current-location-outer-circle'
-          style={[this.props.outerCircleStyle]} />
+          style={[styles.outerCircle, this.props.outerCircleStyle]} />
 
         <MapboxGL.CircleLayer
           id='store-locator-current-location-inner-circle'
           aboveLayerID='store-locator-current-location-outer-circle'
-          style={[this.props.innerCircleStyle]} />
+          style={[styles.innerCircle, this.props.innerCircleStyle]} />
       </MapboxGL.ShapeSource>
     );
   }

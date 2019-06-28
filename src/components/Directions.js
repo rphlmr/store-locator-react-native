@@ -5,13 +5,13 @@ import MapboxClient from '@mapbox/mapbox-sdk';
 
 import Places from './Places';
 
-/*const styles = MapboxGL.StyleSheet.create({
+const styles = {
   directionsLine: {
     lineWidth: 3,
     lineCap: MapboxGL.LineCap.Round,
     lineJoin: MapboxGL.LineJoin.Round,
   },
-});*/
+};
 
 class Directions extends React.Component {
   static propTypes = {
@@ -151,7 +151,7 @@ class Directions extends React.Component {
         <MapboxGL.LineLayer
           id='mapbox-directions-line'
           belowLayerID={Places.UnselectedSymbolID}
-          style={[this.props.style]} />
+          style={[styles.directionsLine, this.props.style]} />
       </MapboxGL.ShapeSource>
     );
   }
