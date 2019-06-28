@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MapboxGL from '@mapbox/react-native-mapbox-gl';
+import MapboxGL from "@react-native-mapbox-gl/maps";
 
 import { View, PixelRatio, Platform } from 'react-native';
 
