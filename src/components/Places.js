@@ -54,7 +54,7 @@ class Places extends React.Component {
     };
   }
 
-  componentWillReceiveProps (nextProps) {
+  UNSAFE_componentWillReceiveProps (nextProps) {
     if (this.state.activeIndex !== nextProps.activeIndex) {
       this.setState({
         activeIndex: nextProps.activeIndex,
